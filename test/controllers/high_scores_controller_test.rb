@@ -7,12 +7,13 @@ class HighScoresControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get high_scores_url
-    assert_response :success
+    assert_response :ok
+    assert_select 'h1', 'High Scores'
   end
 
   test "should get new" do
     get new_high_score_url
-    assert_response :success
+    assert_response :ok
   end
 
   test "should create high_score" do
@@ -25,12 +26,12 @@ class HighScoresControllerTest < ActionDispatch::IntegrationTest
 
   test "should show high_score" do
     get high_score_url(@high_score)
-    assert_response :success
+    assert_response :ok
   end
 
   test "should get edit" do
     get edit_high_score_url(@high_score)
-    assert_response :success
+    assert_response :ok
   end
 
   test "should update high_score" do
